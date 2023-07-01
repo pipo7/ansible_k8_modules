@@ -5,9 +5,10 @@
       kubernetes.core.k8s:
         namespace: testing
         state: present
-        # check with fixed name
+        # Since its generated name so this run will everytime give a new POD
         generate_name: pod-
         definition:
+        # anything below follows  standard K8 yml format
           apiVersion: v1
           kind: Pod
           spec:
