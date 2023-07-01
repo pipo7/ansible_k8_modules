@@ -1,0 +1,8 @@
+
+- hosts: controlVM
+  become: true
+  tasks:
+    - name: ping to see that controlVM is reachable
+      ansible.builtin.ping:
+      async: 30
+   
