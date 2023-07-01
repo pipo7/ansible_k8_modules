@@ -21,6 +21,14 @@ Important to install:
 If using Openshift then use ``` pip3 install pyyaml openshift kubernetes --user ```
 
 
+# Python Compatibility
+use below line in vars or in ansible.cfg as :
+
+```ansible_python_interpreter=/usr/bin/python3```
+
+OR  in host file as:
+```[controlVMs]
+controlVM ansible_connection=local ansible_python_interpreter=/usr/bin/python3 ```
 
 References :
 https://docs.ansible.com/ansible/latest/collections/kubernetes/core/index.html#description
