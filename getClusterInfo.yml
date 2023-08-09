@@ -1,0 +1,15 @@
+
+- hosts: controlVM
+  # become: true # use when running with sudo
+  tasks:
+    - name: Get Cluster information
+      kubernetes.core.k8s_cluster_info:
+      register: api_status
+    # - name: Do not invalidate cache before getting information
+    #   kubernetes.core.k8s_cluster_info:
+    #     invalidate_cache: False
+    #   register: api_status  
+    
+    - name: Output of command `make test-render`
+      debug:
+        var: api_status
