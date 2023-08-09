@@ -1,0 +1,29 @@
+- hosts: controlVM
+  tasks:
+  - name: Scale deployment up, and extend timeout
+    kubernetes.core.k8s_scale:
+      api_version: v1
+      kind: Deployment
+      name: redis-deployment
+      namespace: default
+      replicas: 3
+      wait_timeout: 60
+      # use selection by label selector and deployment name
+      label_selectors:
+        - app=redis
+      continue_on_error: false # could be True also.
+
+
+## Example of scale down
+# - name: Scale deployment down when current replicas match
+#   kubernetes.core.k8s_scale:
+#     api_version: v1
+#     kind: Deployment
+#     name: elastic
+#     namespace: myproject
+#     current_replicas: 3
+#     replicas: 2
+
+
+# Test using 
+# kubectl scale deployment redis-deployment --replicas=1
