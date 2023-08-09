@@ -1,6 +1,6 @@
 
 - hosts: controlVM
-  become: true
+  # become: true # use when running with sudo
   tasks:
     - name: ping to see that controlVM is reachable
       ansible.builtin.ping:

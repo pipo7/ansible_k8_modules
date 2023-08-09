@@ -46,4 +46,4 @@
               nodePort: 30007
 
 # The POD is now accessible at 
-curl http://10.xxx.xx.63:30007/
+# curl http://10.xxx.xx.63:30007/
