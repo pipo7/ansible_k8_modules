@@ -1,0 +1,16 @@
+---
+# import to run the following sequence of playbooks
+# NOTE: Mostly we run the site.yml for a specifc server using --limit, check .gitlab-ci.yml 
+  
+  - import_playbook: testConnection.yml 
+  - import_playbook: getClusterInfo.yml
+  - import_playbook: metricserver.yml
+  - import_playbook: createNamespace.yml
+  - import_playbook: createPodWithGeneretedName.yml
+  - import_playbook: createPodWithNodePort_createItsService.yml
+  - import_playbook: execInPod_copyToPod.yml
+  - import_playbook: createRedisFromFile.yml
+  - import_playbook: scaleExistingDeployment.yml
+  - import_playbook: listAllRunningPods.yml
+
+

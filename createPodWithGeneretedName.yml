@@ -16,8 +16,4 @@
             - name: mynginx
               image: nginx
               imagePullPolicy: IfNotPresent
-            #   ports:
-            # - protocol: TCP
-            #   targetPort: 8000
-            #   name: port-8000-tcp
-            #   port: 8000
+            

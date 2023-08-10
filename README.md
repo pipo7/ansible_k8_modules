@@ -1,5 +1,7 @@
+
+
 # Ansible Kubernetes Module
-https://docs.ansible.com/ansible/latest/collections/kubernetes/core/index.html#description
+https://docs.ansible.com/ansible/latest/collections/kubernetes/core/index.html
 
 Install K8 collection using
 ```ansible-galaxy collection install kubernetes.core```
@@ -24,17 +26,22 @@ If using Openshift then use ``` pip3 install pyyaml openshift kubernetes --user 
 # Python Compatibility
 use below line in vars or in ansible.cfg as :
 
-```ansible_python_interpreter=/usr/bin/python3```
+```ansible_python_interpreter=/usr/bin/python3
+```
 
-OR  in host file as:
+  In host file as:
 ```[controlVMs]
-controlVM ansible_connection=local ansible_python_interpreter=/usr/bin/python3 ```
+controlVM ansible_connection=local ansible_python_interpreter=/usr/bin/python3 
+```
 
 # Network
 ```sudo ufw allow 30007```  for Pod's service.
 
 # Validate a template and check for validation errors:
 Use helmify to convert yaml to helmChart.
+
+# How to Run 
+ansible-playbook site.yml 
 
 References :
 https://docs.ansible.com/ansible/latest/collections/kubernetes/core/index.html#description

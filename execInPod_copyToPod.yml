@@ -1,0 +1,15 @@
+- hosts: controlVM
+  tasks:
+  - name: Execute a command in nginx pod
+    kubernetes.core.k8s_exec:
+      namespace: testing
+      pod: webserver
+      command: cp /usr/share/nginx/html/index.html /usr/share/nginx/html/backindex.html
+
+  # kubectl cp /tmp/foo some-namespace/some-pod:/tmp/bar
+  - name: Copy index.html local to remote pod at /usr/share/nginx/html/
+    kubernetes.core.k8s_cp:
+      namespace: testing
+      pod: webserver
+      remote_path: /usr/share/nginx/html/
+      local_path: ./index.html
