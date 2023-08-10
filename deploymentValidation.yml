@@ -1,0 +1,9 @@
+- hosts: controlVM
+  tasks:
+    - name: warn on validation errors, check for unexpected properties
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', 'mychart/templates/deployment.yaml') | from_yaml }}"
+        validate:
+          fail_on_error: no
+          strict: yes

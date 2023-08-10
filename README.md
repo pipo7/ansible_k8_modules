@@ -33,6 +33,9 @@ controlVM ansible_connection=local ansible_python_interpreter=/usr/bin/python3 `
 # Network
 ```sudo ufw allow 30007```  for Pod's service.
 
+# Validate a template and check for validation errors:
+Use helmify to convert yaml to helmChart.
+
 References :
 https://docs.ansible.com/ansible/latest/collections/kubernetes/core/index.html#description
 https://stackoverflow.com/questions/60866755/ansible-k8s-module-failed-to-import-the-required-python-library-openshift-on

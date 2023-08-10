@@ -1,0 +1,15 @@
+
+- hosts: controlVM
+  tasks:  
+  - name: Search for all running pods
+    kubernetes.core.k8s_info:
+      kind: Pod
+      field_selectors:
+        - status.phase=Running
+    register: pod_list
+
+  # Check for names
+  # Parse names by regex
+  - name: Output of running pods
+    debug:
+      var: pod_list

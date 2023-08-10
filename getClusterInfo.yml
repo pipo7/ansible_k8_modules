@@ -10,6 +10,6 @@
     #     invalidate_cache: False
     #   register: api_status  
     
-    - name: Output of command `make test-render`
+    - name: Output of cluster info kube-api status
       debug:
         var: api_status
